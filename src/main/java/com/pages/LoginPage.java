@@ -13,21 +13,36 @@ public class LoginPage {
 	private WebDriver driver ;
 
 	//By Locators
-	private By emailId = By.name("email");
-	private By password = By.name("password");
-	private By Login =By.xpath("//button[normalize-space()='Login']");
+	private static By HomepageLogo = By.xpath("//a[normalize-space()='Home']");
+	private  static By ClickOnLoginSinguPbutton = By.xpath("//a[normalize-space()='Signup / Login']");
+	private  static By VerifyLoginToYourAcount = By.xpath("//h2[normalize-space()='Login to your account']");
+	private  static By emailId = By.name("email");
+	private  static By password = By.name("password");
+	private  static By Login =By.xpath("//button[normalize-space()='Login']");
+	private  static By loggedInAs = By.xpath("//li[10]//a[1]");
+	private  static By DeleteAcount = By.xpath("//a[normalize-space()='Delete Account']");
+	private static By AccountDeleted = By.xpath("//a[normalize-space()='Delete Account']");
 	//Constructor of the page class 
 	
 	public LoginPage(WebDriver driver){
 		this.driver = driver;
 	}
 	
-	//page actions : faeture (behavior ) of the page the form of methods 
-//	public String getLoginPageTitle() {
-//		return driver.getTitle();
-//	}
+	public String getTitleOfThePage() {
+		return driver.getTitle();
+	}
 	
+    public boolean homePageIsVisibleSuccefully() {
+    	return driver.findElement(HomepageLogo).isDisplayed();
+    }
 	
+    public void clickOnLoginSignUpButton() {
+    	driver.findElement(ClickOnLoginSinguPbutton).click();
+    }
+    
+    public boolean VerifyLoginToyourAcount() {
+    	return driver.findElement(VerifyLoginToYourAcount).isDisplayed();
+    }
 	
 	public void enterUserName(String username) {
 		driver.findElement(emailId).sendKeys(username);
@@ -41,6 +56,16 @@ public class LoginPage {
     	driver.findElement(Login).click();
     }
 	
+    public void VerifyForLoggedInAs() {
+    	driver.findElement(loggedInAs).isDisplayed();
+    }
     
+    public void clickOnDeleteAccount() {
+    	driver.findElement(DeleteAcount).click();
+    }
+    
+    public void VerifyAccountDeleted() {
+    	driver.findElement(AccountDeleted).isDisplayed();
+    }
     
 }
