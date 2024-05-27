@@ -68,4 +68,10 @@ public class LoginPage {
     	driver.findElement(AccountDeleted).isDisplayed();
     }
     
+    public HomePage DoLoginWith(String Username, String Password) {
+    	driver.findElement(emailId).sendKeys(Username);
+    	driver.findElement(password).sendKeys(Password);
+    	driver.findElement(Login).click(); 
+    	return new HomePage(driver);
+    }
 }

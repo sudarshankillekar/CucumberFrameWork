@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		        publish = true ,
-				features = {"src\\test\\resource\\AppFeatures"},
+				features = {"src\\test\\resource\\AppFeatures\\login.feature"},
 				glue = {"stepdefinitions", "AppHooks"},
 				plugin = {"pretty","html:target/cucumber-reports"},
 		        monochrome = true

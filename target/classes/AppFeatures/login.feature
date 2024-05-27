@@ -18,4 +18,4 @@ Scenario: Login with correct credentials
     And user enters Password "98@Sudarshan98"
     And user clicks on login button
     When  user gets the title of the page
-    Then page title should be "Automation Exercisee"
+    Then page title should be "Automation Exercise"
